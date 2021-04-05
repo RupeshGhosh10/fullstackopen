@@ -38,6 +38,7 @@ function App() {
       </div>
       <h1>Anecdote with most votes</h1>
       <Anecdotes anecdote={anecdotes[votes.indexOf(Math.max(...votes))]} />
+      <Vote vote={votes[votes.indexOf(Math.max(...votes))]} />
     </div>
   );
 }
