@@ -6,10 +6,9 @@ const Wheater = ({ countryName }) => {
 
   useEffect(() => {
     const api_key = process.env.REACT_APP_API_KEY.trim();
-    const key = api_key.slice(1, api_key.length - 1);
     axios
       .get(
-        `http://api.weatherstack.com/current?access_key=${key}&query=${countryName}`
+        `http://api.weatherstack.com/current?access_key=${api_key}&query=${countryName}`
       )
       .then(response => {
         setWheather(response.data);
