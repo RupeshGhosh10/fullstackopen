@@ -7,12 +7,7 @@ function App() {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(
-        inputField.length !== 0
-          ? `https://restcountries.eu/rest/v2/name/${inputField}`
-          : 'https://restcountries.eu/rest/v2/all'
-      )
+    axios.get(inputField.length !== 0 ? `https://restcountries.eu/rest/v2/name/${inputField}` : 'https://restcountries.eu/rest/v2/all')
       .then(response => {
         setCountries(response.data);
       })
